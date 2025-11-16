@@ -6,7 +6,9 @@ function Header() {
   return (
     <>
       <header>
-        <img src="icon.jpg" alt="Page Logo" />
+        <a href="/#gallery">
+          <img src="icon.jpg" alt="Page Logo" />
+        </a>
         <h1>Joseph Badami</h1>
         <Navbar className="navigation">
           <Nav>

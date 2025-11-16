@@ -11,6 +11,7 @@ function Gallery() {
 
   return (
     <>
+      <title>Gallery</title>
       <EmblaCarousel options={OPTIONS} updateCard={updateCard} />
       <p>{description}</p>
     </>
