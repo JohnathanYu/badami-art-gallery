@@ -10,6 +10,7 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
+import CarouselPicture from "./carouselPicture";
 
 const TWEEN_FACTOR_BASE_OPACITY = 0.7; // Original value = .84
 const TWEEN_FACTOR_BASE_SCALE = 0.1; // Original value .52
@@ -154,11 +155,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <img
+              {/* <img
                 className="embla__slide__img"
-                src={`https://picsum.photos/600/350?v=${index}`}
-                alt="Your alt text"
-              />
+                src={`${getAddress(index)}`}
+                alt={`${getAlt(index)}`}
+              /> */}
+              <CarouselPicture index={index} />
             </div>
           ))}
         </div>
