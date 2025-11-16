@@ -11,7 +11,8 @@ import {
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 
-const TWEEN_FACTOR_BASE = 0.7; // Original value = .84
+const TWEEN_FACTOR_BASE_OPACITY = 0.7; // Original value = .84
+const TWEEN_FACTOR_BASE_SCALE = 0.1; // Original value .52
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
@@ -24,7 +25,8 @@ type PropType = {
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const tweenFactor = useRef(0);
+  const tweenFactorOpacity = useRef(0);
+  const tweenFactorScale = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
 
   const {
@@ -34,8 +36,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+  const setTweenFactors = useCallback((emblaApi: EmblaCarouselType) => {
+    tweenFactorOpacity.current =
+      TWEEN_FACTOR_BASE_OPACITY * emblaApi.scrollSnapList().length;
+    tweenFactorScale.current =
+      TWEEN_FACTOR_BASE_SCALE * emblaApi.scrollSnapList().length;
   }, []);
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
@@ -75,7 +80,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             });
           }
 
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+          const tweenValue =
+            1 - Math.abs(diffToTarget * tweenFactorOpacity.current);
           const opacity = numberWithinRange(tweenValue, 0, 1).toString();
           emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
         });
@@ -115,7 +121,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             });
           }
 
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+          const tweenValue =
+            1 - Math.abs(diffToTarget * tweenFactorScale.current);
           const scale = numberWithinRange(tweenValue, 0, 1).toString();
           const tweenNode = tweenNodes.current[slideIndex];
           tweenNode.style.transform = `scale(${scale})`;
@@ -129,17 +136,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     if (!emblaApi) return;
 
     setTweenNodes(emblaApi);
-    setTweenFactor(emblaApi);
+    setTweenFactors(emblaApi);
     tweenOpacity(emblaApi);
     emblaApi
-      .on("reInit", setTweenFactor)
+      .on("reInit", setTweenFactors)
       .on("reInit", tweenOpacity)
       .on("scroll", tweenOpacity)
       .on("slideFocus", tweenOpacity)
       .on("reInit", tweenScale)
       .on("scroll", tweenScale)
       .on("slideFocus", tweenScale);
-  }, [emblaApi, setTweenFactor, setTweenNodes, tweenOpacity, tweenScale]);
+  }, [emblaApi, setTweenFactors, setTweenNodes, tweenOpacity, tweenScale]);
 
   return (
     <section className="embla">
