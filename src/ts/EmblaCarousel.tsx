@@ -14,7 +14,7 @@ import CarouselPictures from "./CarouselPictures";
 import { carouselGetDescription } from "./CarouselData";
 
 const TWEEN_FACTOR_BASE_OPACITY = 0.7; // Original value = .84
-const TWEEN_FACTOR_BASE_SCALE = 0.1; // Original value .52
+const TWEEN_FACTOR_BASE_SCALE = 0.2; // Original value .52
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
@@ -134,7 +134,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     []
   );
 
-  const testFunction = useCallback(
+  const newDescription = useCallback(
     (emblaApi: EmblaCarouselType) => {
       updateCard(carouselGetDescription(emblaApi.selectedScrollSnap()));
     },
@@ -148,7 +148,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     setTweenNodes(emblaApi);
     setTweenFactors(emblaApi);
     tweenOpacity(emblaApi);
-    testFunction(emblaApi);
+    tweenScale(emblaApi);
+    newDescription(emblaApi);
     emblaApi
       .on("reInit", setTweenFactors)
       .on("reInit", tweenOpacity)
@@ -157,14 +158,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       .on("reInit", tweenScale)
       .on("scroll", tweenScale)
       .on("slideFocus", tweenScale)
-      .on("reInit", testFunction)
-      .on("scroll", testFunction)
-      .on("slideFocus", testFunction);
+      .on("reInit", newDescription)
+      .on("scroll", newDescription)
+      .on("slideFocus", newDescription);
   }, [
     emblaApi,
     setTweenFactors,
     setTweenNodes,
-    testFunction,
+    newDescription,
     tweenOpacity,
     tweenScale,
   ]);

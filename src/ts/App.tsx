@@ -14,9 +14,10 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="card"></div>
-      <EmblaCarousel options={OPTIONS} updateCard={updateCard} />
-      <h1>{description}</h1>
+      <main>
+        <EmblaCarousel options={OPTIONS} updateCard={updateCard} />
+        <p>{description}</p>
+      </main>
     </>
   );
 }
