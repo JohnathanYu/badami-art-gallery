@@ -155,11 +155,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              {/* <img
-                className="embla__slide__img"
-                src={`${getAddress(index)}`}
-                alt={`${getAlt(index)}`}
-              /> */}
               <CarouselPicture index={index} />
             </div>
           ))}

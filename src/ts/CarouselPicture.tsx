@@ -1,4 +1,3 @@
-// const address = "https://picsum.photos/600/350?v=1";
 const BASE_ADDRESS = "../../public/CarouselAssets/";
 
 interface objectData {
@@ -19,17 +18,42 @@ const DATA: objectData[] = [
     description: "hello world",
   },
   {
-    fileName: "Doot.PNG",
+    fileName: "misc Creation, Desertion, and Reflection.png",
     altText: "",
     description: "hello world",
   },
   {
-    fileName: "Doot.PNG",
+    fileName: "normal comic Comic Mockup.PNG",
     altText: "",
     description: "hello world",
   },
   {
-    fileName: "Doot.PNG",
+    fileName: "normal comic Proof of Concept.PNG",
+    altText: "",
+    description: "hello world",
+  },
+  {
+    fileName: "padoodles Character Designs.PNG",
+    altText: "",
+    description: "hello world",
+  },
+  {
+    fileName: "Padoodles Game_Mock-up 1.PNG",
+    altText: "",
+    description: "hello world",
+  },
+  {
+    fileName: "Padoodles Game_Mock-up 2.PNG",
+    altText: "",
+    description: "hello world",
+  },
+  {
+    fileName: "Pip.PNG",
+    altText: "",
+    description: "hello world",
+  },
+  {
+    fileName: "XalNir.PNG",
     altText: "",
     description: "hello world",
   },
