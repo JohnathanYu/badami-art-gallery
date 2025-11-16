@@ -10,7 +10,7 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
-import CarouselPicture from "./carouselPicture";
+import CarouselPictures from "./CarouselPictures";
 
 const TWEEN_FACTOR_BASE_OPACITY = 0.7; // Original value = .84
 const TWEEN_FACTOR_BASE_SCALE = 0.1; // Original value .52
@@ -19,12 +19,11 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
 type PropType = {
-  slides: number[];
   options?: EmblaOptionsType;
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const tweenFactorOpacity = useRef(0);
   const tweenFactorScale = useRef(0);
@@ -152,13 +151,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <CarouselPicture index={index} />
-            </div>
-          ))}
-        </div>
+        <CarouselPictures />
       </div>
 
       <div className="embla__controls">

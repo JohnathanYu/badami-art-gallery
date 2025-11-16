@@ -67,14 +67,20 @@ function getAlt(index: number) {
   return DATA[index].altText;
 }
 
-function CarouselPicture({ index }: { index: number }) {
+function CarouselPictures() {
   return (
-    <img
-      className="embla__slide__img"
-      src={`${getAddress(index)}`}
-      alt={`${getAlt(index)}`}
-    />
+    <div className="embla__container">
+      {Array.from(Array(DATA.length).keys()).map((index) => (
+        <div className="embla__slide" key={index}>
+          <img
+            className="embla__slide__img"
+            src={`${getAddress(index)}`}
+            alt={`${getAlt(index)}`}
+          />
+        </div>
+      ))}
+    </div>
   );
 }
 
-export default CarouselPicture;
+export default CarouselPictures;
