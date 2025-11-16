@@ -19,7 +19,7 @@
   min-width: 0;
   padding-left: var(--slide-spacing);
 }
-.embla__slide__number {
+/* .embla__slide__number {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
   border-radius: 1.8rem;
   font-size: 4rem;
@@ -29,7 +29,18 @@
   justify-content: center;
   height: var(--slide-height);
   user-select: none;
+} */
+
+.embla__slide__img {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  border-radius: 1.8rem;
+  display: block;
+  height: var(--slide-height);
+  width: 100%;
+  object-fit: cover;
+  user-select: none;
 }
+
 .embla__controls {
   display: grid;
   grid-template-columns: auto 1fr;
