@@ -1,4 +1,4 @@
-const BASE_ADDRESS = "../../public/CarouselAssets/";
+const BASE_ADDRESS = "CarouselAssets/";
 
 interface objectData {
   fileName: string;

@@ -4,7 +4,7 @@ function Header() {
   return (
     <>
       <header>
-        <img src="../../public/icon.jpg" alt="Page Logo" />
+        <img src="icon.jpg" alt="Page Logo" />
         <h1>Joseph Badami</h1>
         <nav>
           <a href="home.html">Gallery</a>
