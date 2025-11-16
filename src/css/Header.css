@@ -15,25 +15,8 @@ header {
     margin: 10px;
   }
 
-  nav {
-    padding: 10px 0px 10px 0px;
-    display: flex;
-    flex-flow: row wrap;
+  .navigation {
+    background-color: aqua;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-
-    a {
-      /* color: #2b4005; */
-      font-family: "Inter", Times, serif;
-      font-weight: 600;
-      font-size: 2rem;
-    }
-
-    h2 {
-      padding: 0px 10px 0px 10px;
-      font-size: 3rem;
-      font-weight: 100;
-    }
   }
 }

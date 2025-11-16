@@ -1,3 +1,5 @@
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import "../css/Header.css";
 
 function Header() {
@@ -6,13 +8,13 @@ function Header() {
       <header>
         <img src="icon.jpg" alt="Page Logo" />
         <h1>Joseph Badami</h1>
-        <nav>
-          <a href="home.html">Gallery</a>
-          <h2>|</h2>
-          <a href="menu.html">Projects</a>
-          <h2>|</h2>
-          <a href="board-games.html">About</a>
-        </nav>
+        <Navbar className="navigation">
+          <Nav>
+            <Nav.Link href="#gallery">Gallery</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href="#About">About</Nav.Link>
+          </Nav>
+        </Navbar>
       </header>
     </>
   );
