@@ -10,10 +10,9 @@ const DATA: objectData[] = [
   {
     fileName: "Doot.PNG",
     altText: "",
-    description: "test",
-    // description:
-    //   "These are all characters from multiple different Dungeons and Dragons games. Even though they were primarily made " +
-    //   "for fun, they were also an excuse to experiment with various poses in a program I was fairly new with.",
+    description:
+      "These are all characters from multiple different Dungeons and Dragons games. Even though they were primarily made " +
+      "for fun, they were also an excuse to experiment with various poses in a program I was fairly new with.",
   },
   {
     fileName: "misc brawl repaint.PNG",

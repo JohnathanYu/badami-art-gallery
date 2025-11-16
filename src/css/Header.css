@@ -16,7 +16,10 @@ header {
   }
 
   .navigation {
-    background-color: aqua;
     justify-content: center;
+
+    .active {
+      text-decoration: underline;
+    }
   }
 }
