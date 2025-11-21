@@ -1,6 +1,7 @@
 import { type EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "../EmblaCarousel";
 import { useState } from "react";
+import "../../css/gallery.css";
 
 function Gallery() {
   const [description, setDescription] = useState("");
@@ -13,7 +14,9 @@ function Gallery() {
     <>
       <title>Gallery</title>
       <EmblaCarousel options={OPTIONS} updateCard={updateCard} />
-      <p>{description}</p>
+      <div>
+        <p>{description}</p>
+      </div>
     </>
   );
 }

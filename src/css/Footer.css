@@ -1,0 +1,12 @@
+footer {
+  background: #87a55f;
+  text-align: center;
+  justify-content: flex-end;
+  padding: 1rem 0px;
+  font-size: 1rem;
+}
+
+p {
+  padding: 0.5rem 0px;
+  margin: 0;
+}

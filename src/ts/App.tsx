@@ -6,6 +6,7 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Gallery from "./Pages/Gallery";
 import NotFoundPage from "./Pages/NotFoundPage";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           </Routes>
         </HashRouter>
       </main>
+      <Footer></Footer>
     </>
   );
 }
