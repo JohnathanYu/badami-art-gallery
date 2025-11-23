@@ -3,7 +3,7 @@
   margin: 2rem 0;
   --slide-height: 40rem;
   --slide-spacing: 0rem;
-  --slide-size: 70%;
+  --slide-size: 60%;
 }
 .embla__viewport {
   overflow: hidden;
@@ -17,6 +17,8 @@
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
   min-width: 0;
+  display: flex;
+  justify-content: center;
   padding-left: var(--slide-spacing);
 }
 /* .embla__slide__number {
@@ -36,8 +38,9 @@
   border-radius: 1.8rem;
   display: block;
   height: var(--slide-height);
-  width: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  width: fit-content;
+  object-fit: contain;
   user-select: none;
 }
 
