@@ -1,3 +1,10 @@
+main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
 p {
   padding: 2rem;
 }
