@@ -15,7 +15,8 @@ function Gallery() {
       <title>Gallery</title>
       <EmblaCarousel options={OPTIONS} updateCard={updateCard} />
       <div>
-        <p>{description}</p>
+        <p className="joeSays">Joe Says:</p>
+        <p className="descriptionBox">{description}</p>
       </div>
     </>
   );

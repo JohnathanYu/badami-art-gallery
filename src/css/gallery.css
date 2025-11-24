@@ -1,0 +1,15 @@
+.joeSays {
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.descriptionBox {
+  margin: 0 2rem 2rem 2rem;
+  padding: 2rem 8rem;
+  width: 50vw;
+  min-height: 13rem;
+  background-color: rgb(27, 180, 180);
+  border-radius: 1.8rem;
+  border: 0.5rem solid grey;
+}
