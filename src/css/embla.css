@@ -42,6 +42,7 @@
   width: fit-content;
   object-fit: contain;
   user-select: none;
+  cursor: pointer;
 }
 
 .embla__controls {
