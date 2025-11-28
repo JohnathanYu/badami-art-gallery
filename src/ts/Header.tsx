@@ -13,7 +13,7 @@ function Header() {
         <Navbar className="navigation">
           <Nav>
             <Nav.Link href="#gallery">Gallery</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
+            {/* <Nav.Link href="#projects">Projects</Nav.Link> */}
             <Nav.Link href="#About">About</Nav.Link>
           </Nav>
         </Navbar>
