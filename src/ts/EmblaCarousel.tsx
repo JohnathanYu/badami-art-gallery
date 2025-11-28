@@ -11,7 +11,7 @@ import {
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselPictures from "./CarouselPictures";
-import { carouselGetDescription } from "./CarouselData";
+import { carouselGetAddress, carouselGetDescription } from "./CarouselData";
 
 const TWEEN_FACTOR_BASE_OPACITY = 0.7; // Original value = .84
 const TWEEN_FACTOR_BASE_SCALE = 0.2; // Original value .52
@@ -22,10 +22,11 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 type PropType = {
   options?: EmblaOptionsType;
   updateCard: (newDescription: string) => void;
+  openModal: (newSrc: string) => void;
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { options, updateCard } = props;
+  const { options, updateCard, openModal } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const tweenFactorOpacity = useRef(0);
   const tweenFactorScale = useRef(0);
@@ -170,10 +171,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     tweenScale,
   ]);
 
+  const handleClick = (index: number) => {
+    if (!emblaApi) return;
+    if (index == emblaApi.selectedScrollSnap()) {
+      openModal(carouselGetAddress(emblaApi.selectedScrollSnap()));
+    }
+  };
+
   return (
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
-        <CarouselPictures />
+        <CarouselPictures handleClick={handleClick} />
       </div>
 
       <div className="embla__controls">
