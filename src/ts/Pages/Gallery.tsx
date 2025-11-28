@@ -6,25 +6,18 @@ import "../../css/gallery.css";
 function Gallery() {
   const [description, setDescription] = useState("");
   const [modalSrc, setModalSrc] = useState("../../CarouselAssets/Doot.PNG");
+  const [modalDisplay, setModalDisplay] = useState(false);
   function updateCard(newDescription: string) {
     setDescription(newDescription);
   }
 
   function openModal(newSrc: string) {
     setModalSrc(newSrc);
-    const modal = document.getElementById("modal");
-    if (modal) {
-      modal.style.display = "flex";
-      modal.classList.add("show");
-    }
+    setModalDisplay(true);
   }
 
   function closeModal() {
-    const modal = document.getElementById("modal");
-    if (modal) {
-      modal.classList.remove("show");
-      modal.style.display = "none";
-    }
+    setModalDisplay(false);
   }
 
   const OPTIONS: EmblaOptionsType = { loop: true };
@@ -42,7 +35,11 @@ function Gallery() {
         <p className="descriptionBox">{description}</p>
       </div>
 
-      <div id="modal" className="modal" onClick={closeModal}>
+      <div
+        id="modal"
+        className={modalDisplay ? "modal show" : "modal"}
+        onClick={closeModal}
+      >
         <span className="close" onClick={closeModal}>
           &times;
         </span>
