@@ -1,5 +1,5 @@
 footer {
-  background: grey;
+  background: var(--brand-primary);
   text-align: center;
   justify-content: flex-end;
   padding: 1rem 0px;

@@ -34,7 +34,9 @@
 } */
 
 .embla__slide__img {
-  box-shadow: 0 0 0 0.2rem var(--detail-medium-contrast);
+  border-style: solid;
+  border-color: var(--detail-medium-contrast);
+  background-color: black;
   border-radius: 1.8rem;
   display: block;
   height: var(--slide-height);
@@ -60,7 +62,7 @@
   align-items: center;
 }
 .embla__button {
-  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-tap-highlight-color: var(--text-high-contrast-faint);
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
