@@ -24,7 +24,7 @@ body {
 }
 .theme-dark {
   /* In intentional use */
-  --brand-primary: rgb(56, 51, 77);
+  --brand-primary: rgb(32, 28, 48);
   --brand-secondary: rgb(12, 1, 60);
   --background-site: rgb(4, 1, 20);
   --text-body: rgb(222, 222, 222);
