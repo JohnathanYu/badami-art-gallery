@@ -7,9 +7,9 @@ html {
   line-height: 1.15;
   background-color: var(--background-site);
   font-size: 62.5%;
-  font-family: Inter, "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  /* font-family: Inter, "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    "Segoe UI Symbol"; */
 }
 *,
 *::before,
@@ -32,6 +32,8 @@ body {
   --text-link: rgb(147, 188, 245);
   --text-link-hover: rgb(47, 88, 145);
   --text-link-active: rgb(67, 108, 165);
+  --font-title: "Montserrat", sans-serif;
+  --font-body: Helvetica;
   /* Not in intentional use */
   --brand-alternative: rgb(136, 186, 191);
   --background-code: rgb(12, 12, 12);
