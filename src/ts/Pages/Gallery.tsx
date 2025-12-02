@@ -31,8 +31,12 @@ function Gallery() {
         openModal={openModal}
       />
       <div>
-        <p className="joeSays">Joe Says:</p>
-        <p className="descriptionBox">{description}</p>
+        <p className="joeSays">Artist Commentary:</p>
+        <p className="descriptionBox">
+          <b>"</b>
+          {description}
+          <b>"</b>
+        </p>
       </div>
 
       <div
