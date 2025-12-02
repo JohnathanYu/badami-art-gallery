@@ -11,7 +11,11 @@ import {
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselPictures from "./CarouselPictures";
-import { carouselGetAddress, carouselGetDescription } from "./CarouselData";
+import {
+  carouselGetAddress,
+  carouselGetAudio,
+  carouselGetDescription,
+} from "./CarouselData";
 
 const TWEEN_FACTOR_BASE_OPACITY = 0.7; // Original value = .84
 const TWEEN_FACTOR_BASE_SCALE = 0.2; // Original value .52
@@ -21,7 +25,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 
 type PropType = {
   options?: EmblaOptionsType;
-  updateCard: (newDescription: string) => void;
+  updateCard: (newDescription: string, newAudio: string) => void;
   openModal: (newSrc: string) => void;
 };
 
@@ -135,9 +139,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     []
   );
 
-  const newDescription = useCallback(
+  const newDescriptionAndAudio = useCallback(
     (emblaApi: EmblaCarouselType) => {
-      updateCard(carouselGetDescription(emblaApi.selectedScrollSnap()));
+      const curIndex = emblaApi.selectedScrollSnap();
+      updateCard(carouselGetDescription(curIndex), carouselGetAudio(curIndex));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -150,7 +155,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     setTweenFactors(emblaApi);
     tweenOpacity(emblaApi);
     tweenScale(emblaApi);
-    newDescription(emblaApi);
+    newDescriptionAndAudio(emblaApi);
     emblaApi
       .on("reInit", setTweenFactors)
       .on("reInit", tweenOpacity)
@@ -159,14 +164,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       .on("reInit", tweenScale)
       .on("scroll", tweenScale)
       .on("slideFocus", tweenScale)
-      .on("reInit", newDescription)
-      .on("scroll", newDescription)
-      .on("slideFocus", newDescription);
+      .on("reInit", newDescriptionAndAudio)
+      .on("scroll", newDescriptionAndAudio)
+      .on("slideFocus", newDescriptionAndAudio);
   }, [
     emblaApi,
     setTweenFactors,
     setTweenNodes,
-    newDescription,
+    newDescriptionAndAudio,
     tweenOpacity,
     tweenScale,
   ]);

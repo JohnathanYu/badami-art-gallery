@@ -2,13 +2,17 @@ import { type EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "../EmblaCarousel";
 import { useState } from "react";
 import "../../css/gallery.css";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 function Gallery() {
   const [description, setDescription] = useState("");
-  const [modalSrc, setModalSrc] = useState("../../CarouselAssets/Doot.PNG");
+  const [audio, setAudio] = useState("");
+  const [modalSrc, setModalSrc] = useState("CarouselAssets/Doot.PNG");
   const [modalDisplay, setModalDisplay] = useState(false);
-  function updateCard(newDescription: string) {
+  function updateCard(newDescription: string, newAudio: string) {
     setDescription(newDescription);
+    setAudio(newAudio);
   }
 
   function openModal(newSrc: string) {
@@ -37,6 +41,16 @@ function Gallery() {
           {description}
           <b>"</b>
         </p>
+      </div>
+      <div>
+        <p className="audioCommentary">Audio Commentary:</p>
+        <AudioPlayer
+          hasDefaultKeyBindings={false}
+          showJumpControls={false}
+          autoPlayAfterSrcChange={false}
+          customAdditionalControls={[]}
+          src={audio}
+        />
       </div>
 
       <div
