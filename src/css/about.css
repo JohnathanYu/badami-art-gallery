@@ -1,0 +1,15 @@
+.textBox {
+  margin: 2rem;
+  padding: 1rem 8rem;
+  width: 50vw;
+  min-height: 13rem;
+  background-color: var(--brand-primary);
+  border-radius: 1.8rem;
+  border: 0.5rem solid var(--detail-high-contrast);
+
+  p:first-of-type {
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+  }
+}

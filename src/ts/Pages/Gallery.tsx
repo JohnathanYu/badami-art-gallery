@@ -43,7 +43,7 @@ function Gallery() {
         </p>
       </div>
       <div>
-        <p className="audioCommentary">Audio Commentary:</p>
+        <p className="audioCommentary">Curator Commentary:</p>
         <AudioPlayer
           hasDefaultKeyBindings={false}
           showJumpControls={false}

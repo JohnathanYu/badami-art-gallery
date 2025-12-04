@@ -56,7 +56,7 @@ const DATA: objectData[] = [
     altText: "",
     description:
       "These were mock-ups for a video game that was never actually intended to be made. They are more rough concepts if " +
-      "anything using preexisting characters I am still fond of.",
+      "anything, using preexisting characters I am still fond of.",
     audio: "",
   },
   {
@@ -64,7 +64,7 @@ const DATA: objectData[] = [
     altText: "",
     description:
       "These were mock-ups for a video game that was never actually intended to be made. They are more rough concepts if " +
-      "anything using preexisting characters I am still fond of.",
+      "anything, using preexisting characters I am still fond of.",
     audio: "",
   },
   {
@@ -72,7 +72,7 @@ const DATA: objectData[] = [
     altText: "",
     description:
       "These were mock-ups for a video game that was never actually intended to be made. They are more rough concepts if " +
-      "anything using preexisting characters I am still fond of.",
+      "anything, using preexisting characters I am still fond of.",
     audio: "",
   },
   {
